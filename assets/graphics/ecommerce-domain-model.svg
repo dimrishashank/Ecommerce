@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 280" width="100%" height="auto">
+  <defs>
+    <linearGradient id="ecomBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C14"/>
+      <stop offset="100%" stop-color="#141824"/>
+    </linearGradient>
+    <linearGradient id="amberBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FCD34D"/>
+    </linearGradient>
+    <pattern id="ecomGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.5" stroke-opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="880" height="280" rx="12" fill="url(#ecomBg)"/>
+  <rect width="880" height="280" rx="12" fill="url(#ecomGrid)"/>
+  <rect x="1" y="1" width="878" height="278" rx="11" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+  <rect x="0" y="0" width="880" height="3" fill="url(#amberBar)"/>
+
+  <!-- Header -->
+  <g transform="translate(40, 28)">
+    <rect width="180" height="20" rx="4" fill="#0F172A" stroke="#F59E0B" stroke-opacity="0.5" stroke-width="1"/>
+    <circle cx="8" cy="10" r="2.5" fill="#FBBF24"/>
+    <text x="16" y="14" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#FCD34D" letter-spacing="1">OBJECT DOMAIN MODEL</text>
+    <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#F8FAFC">
+      E-Commerce Entity Encapsulation &amp; Aggregation Architecture
+    </text>
+  </g>
+
+  <!-- ================= 4 DOMAIN CLASSES ================= -->
+
+  <!-- Class 1: User -->
+  <g transform="translate(40, 95)">
+    <rect width="180" height="150" rx="6" fill="#111827" stroke="#334155" stroke-width="1"/>
+    <rect width="180" height="26" rx="6" fill="#1E293B"/>
+    <text x="12" y="18" font-family="'SF Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#60A5FA">&lt;&lt;entity&gt;&gt; User</text>
+    <line x1="0" y1="26" x2="180" y2="26" stroke="#334155" stroke-width="1"/>
+
+    <!-- Fields -->
+    <text x="12" y="46" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- id: int</text>
+    <text x="12" y="62" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- username: String</text>
+    <text x="12" y="78" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- email: String</text>
+    <line x1="0" y1="88" x2="180" y2="88" stroke="#334155" stroke-width="1"/>
+
+    <!-- Methods -->
+    <text x="12" y="106" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#CBD5E1">+ getId(): int</text>
+    <text x="12" y="122" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#CBD5E1">+ getUsername(): String</text>
+    <text x="12" y="138" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#CBD5E1">+ getEmail(): String</text>
+  </g>
+
+  <!-- Class 2: Product -->
+  <g transform="translate(250, 95)">
+    <rect width="190" height="150" rx="6" fill="#111827" stroke="#334155" stroke-width="1"/>
+    <rect width="190" height="26" rx="6" fill="#1E293B"/>
+    <text x="12" y="18" font-family="'SF Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#34D399">&lt;&lt;entity&gt;&gt; Product</text>
+    <line x1="0" y1="26" x2="190" y2="26" stroke="#334155" stroke-width="1"/>
+
+    <!-- Fields -->
+    <text x="12" y="46" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- id: int</text>
+    <text x="12" y="62" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- name: String</text>
+    <text x="12" y="78" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- price: double</text>
+    <text x="12" y="94" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- stock: int</text>
+    <line x1="0" y1="104" x2="190" y2="104" stroke="#334155" stroke-width="1"/>
+
+    <!-- Methods -->
+    <text x="12" y="122" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#CBD5E1">+ getPrice(): double</text>
+    <text x="12" y="138" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#CBD5E1">+ toString(): String</text>
+  </g>
+
+  <!-- Composition Connector (Cart contains List<Product>) -->
+  <g transform="translate(440, 165)">
+    <!-- Filled diamond on Cart side -->
+    <polygon points="50,0 42,-5 34,0 42,5" fill="#F59E0B" stroke="#F59E0B"/>
+    <line x1="34" y1="0" x2="0" y2="0" stroke="#F59E0B" stroke-width="1.8"/>
+    <polygon points="0,0 8,-4 8,4" fill="#F59E0B"/>
+    <text x="10" y="-8" font-family="'SF Mono', Consolas, monospace" font-size="8" fill="#FCD34D">1..*</text>
+  </g>
+
+  <!-- Class 3: Cart -->
+  <g transform="translate(490, 95)">
+    <rect width="180" height="150" rx="6" fill="#111827" stroke="#F59E0B" stroke-width="1.2"/>
+    <rect width="180" height="26" rx="6" fill="#1E293B"/>
+    <text x="12" y="18" font-family="'SF Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#FBBF24">&lt;&lt;aggregate&gt;&gt; Cart</text>
+    <line x1="0" y1="26" x2="180" y2="26" stroke="#334155" stroke-width="1"/>
+
+    <!-- Fields -->
+    <text x="12" y="52" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#94A3B8">- items: List&lt;Product&gt;</text>
+    <line x1="0" y1="76" x2="180" y2="76" stroke="#334155" stroke-width="1"/>
+
+    <!-- Methods -->
+    <text x="12" y="102" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#CBD5E1">+ addProduct(Product): void</text>
+    <text x="12" y="126" font-family="'SF Mono', Consolas, monospace" font-size="9" fill="#CBD5E1">+ printItems(): void</text>
+  </g>
+
+  <!-- Execution Connector (Main drives Cart) -->
+  <g transform="translate(670, 165)">
+    <line x1="0" y1="0" x2="38" y2="0" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <polygon points="0,0 6,-3 6,3" fill="#38BDF8"/>
+  </g>
+
+  <!-- Class 4: Main Driver -->
+  <g transform="translate(710, 95)">
+    <rect width="130" height="150" rx="6" fill="#111827" stroke="#38BDF8" stroke-width="1"/>
+    <rect width="130" height="26" rx="6" fill="#1E293B"/>
+    <text x="12" y="18" font-family="'SF Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#38BDF8">&lt;&lt;driver&gt;&gt; Main</text>
+    <line x1="0" y1="26" x2="130" y2="26" stroke="#334155" stroke-width="1"/>
+
+    <!-- Methods -->
+    <text x="10" y="65" font-family="'SF Mono', Consolas, monospace" font-size="8.5" fill="#CBD5E1">+ main(String[]): void</text>
+    <text x="10" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" fill="#64748B">Instantiates Cart</text>
+    <text x="10" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" fill="#64748B">Populates catalog</text>
+    <text x="10" y="129" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" fill="#64748B">Tests checkout flow</text>
+  </g>
+</svg>

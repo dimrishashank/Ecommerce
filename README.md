@@ -12,6 +12,10 @@ This project implements fundamental domain logic for an online shopping system. 
 
 ## 🏗️ Architecture & Class Structure
 
+<p align="center">
+  <img src="assets/graphics/ecommerce-domain-model.svg" alt="E-Commerce Object Domain Model and Class Relationships" width="100%"/>
+</p>
+
 The codebase is organized into domain model classes that represent the primary entities of an e-commerce platform:
 
 | Class | Responsibility | Key Attributes / Methods |
